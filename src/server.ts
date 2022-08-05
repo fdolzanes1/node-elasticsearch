@@ -1,5 +1,6 @@
 import express from 'express';
 import getClient from './client/elasticsearch';
+import ArticleController from './controller/ArticleController';
 import DBController from './db/DBController';
 
 const app = express();
@@ -21,6 +22,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/db/create', DBController.create);
+app.get('/articles/create', ArticleController.create);
 
 app.listen(3000, () => {
   console.log('listening on port 3000');
