@@ -26,6 +26,14 @@ class ArticleController {
 
     return res.status(200).json({ message: "Index Successfully"});
   }
+
+  async findAll(req: Request, res: Response) {
+    const data = await getClient().search({
+      index: 'articles',
+      size: 6000
+    });
+    return res.status(200).json(data.hits);
+  }
   
 }
 

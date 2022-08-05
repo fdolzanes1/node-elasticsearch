@@ -23,6 +23,7 @@ app.get('/', async (req, res) => {
 
 app.get('/db/create', DBController.create);
 app.get('/articles/create', ArticleController.create);
+app.get('/articles/findall', ArticleController.findAll);
 
 app.listen(3000, () => {
   console.log('listening on port 3000');
